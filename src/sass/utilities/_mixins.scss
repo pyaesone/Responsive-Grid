@@ -1,0 +1,72 @@
+// ==========================================================
+// Heading      : Mixins 
+// Description  : Reusable sass functions are implemente here .
+// ==========================================================
+
+
+// BEM selectors 
+
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+@mixin respond-to-max-width($width) {
+    @media only screen and(max-width: $width) {
+        @content;
+    }
+}
+
+@mixin mq($break) {
+    @if $break == "xs" {
+        @media(min-width: $brkpoint-xs) and (max-width: $brkpoint-sm) {
+            @content;
+        }
+    }
+    @else if $break == "small" {
+        @media(min-width: $brkpoint-sm) and (max-width: $brkpoint-md) {
+            @content;
+        }
+    }
+    @else if $break == "medium" {
+        @media(min-width: $brkpoint-md + 1){
+            @content;
+        }
+    }
+    @else if $break == "large" {
+        @media(min-width: $brkpoint-lg){
+            @content;
+        }
+    }
+    @else {
+        @error "No value colud be retrieved for `#{break}`."
+    }
+}
+
+// gird columns
+
+@mixin g-columns {
+    $context: 1 / $g-col-count;
+    @for $i from 1 through $g-col-count {
+        &--#{$i}{
+            float: left;
+            width: percentage($context*$i);
+        }
+    }
+}
+
+@mixin g-columns-push {
+    $push-context: 1 / $g-col-count;
+    @for $i from 1 through $g-col-count {
+        &--#{$i}{
+            left: percentage($push-context*$i);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Responsive Grid",
+    "version": "1.0.0",
+    "description": "Responsive Grid System developed by PSA",
+    "main": "app.js",
+    "scripts": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pyaesone/responsive-grid.git",
+    },
+    "author": "PSA",
+    "license": "MIT",
+    "devDependencies": {
+        "gulp": "~3.9.0",
+        "gulp-util": "~3.0.6",
+        "gulp-sass": "~2.0.1",
+        "gulp-compass": "~2.1.0"
+    }
+}
+

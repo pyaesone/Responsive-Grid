@@ -1,0 +1,10 @@
+// ==========================================================
+// Heading      : Sass Functions 
+// Description  : Reusable sass functions are implemente here .
+// ==========================================================
+
+@function em($target,$context:$base-font-size){
+    @return ($target/$context)*1em;
+}
+
+

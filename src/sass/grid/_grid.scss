@@ -1,0 +1,75 @@
+// ==========================================================
+// Heading      : Import Sass files 
+// Description  : All of the scss partial files in this folder
+// will be imported to this file. We will not use sass gobbling
+// becacuse it can't control the order of sass files.
+// ==========================================================
+
+// container width is according to bootstrap container
+.container {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   padding-left:  $g-col-padding;
+   padding-right: $g-col-padding;
+   @include m(medium) {
+       width: 1170px;
+   }
+   @include m(small) {
+       width: 750px;
+   }
+}
+
+.grid {
+    @extend %clearfix;
+    @extend %centered;
+
+    [class*="grid__col"] > & {
+        width: 100%;
+    }
+
+    // set max-width for grid container
+    @include mq(large) {
+        max-width: $g-cont-max-width;
+    }
+
+    @include e(col) {
+
+        @include mq(medium) {
+            @include g-columns;
+            @include m(push) {
+                @include g-columns-push;
+            }
+        }
+
+        @include m(sm) {
+            @include mq(small) {
+                @include g-columns;
+                @include m(push) {
+                    @include g-columns-push;
+                }
+            }
+        }
+
+        @include m(xs) {
+            @include mq(xs) {
+                @include g-columns;
+                @include m(push) {
+                    @include g-columns-push;
+                }
+            }
+        }
+    }
+
+    // Columns Styles
+    [class^="grid__col--"]{
+        position: relative;
+        margin-bottom: em(12px);
+
+        min-height: 1px;
+        padding-left: $g-col-padding;
+        padding-right: $g-col-padding;
+    }
+}
+
+

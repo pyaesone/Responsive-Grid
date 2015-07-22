@@ -1,0 +1,16 @@
+#Logs
+
+logs
+.logs
+
+#vim swp file
+*.swp
+
+#node-waf configuration
+.lock-wscript
+
+#Dependency directory
+node_modules
+
+#sass-cache
+.sass-cache

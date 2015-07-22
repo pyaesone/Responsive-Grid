@@ -1,0 +1,17 @@
+// ==========================================================
+// Heading      : Base 
+// Description  : 
+// ==========================================================
+
+* {
+    margin: 0;
+    padding: 0;
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+}
+
