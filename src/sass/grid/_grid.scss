@@ -35,29 +35,46 @@
 
     @include e(col) {
 
-        @include mq(medium) {
-            @include g-columns;
-            @include m(push) {
-                @include g-columns-push;
+        @include m(lg) {
+            @include mq(medium) {
+                @include g-columns;
+                @include m(push) {
+                    @include g-columns-push;
+                }
             }
         }
 
+        @include m(md) {
+
+            @include mq(medium) {
+                @include g-columns;
+                @include m(push) {
+                    @include g-columns-push;
+                }
+            }
+
+        }
+
         @include m(sm) {
+
             @include mq(small) {
                 @include g-columns;
                 @include m(push) {
                     @include g-columns-push;
                 }
             }
+
         }
 
         @include m(xs) {
+
             @include mq(xs) {
                 @include g-columns;
                 @include m(push) {
                     @include g-columns-push;
                 }
             }
+
         }
     }
 
